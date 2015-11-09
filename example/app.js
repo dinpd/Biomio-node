@@ -1,5 +1,5 @@
 var fs = require('fs');
-var Agent = require('../');
+var BiomioNode = require('../');
 var config = require('./config');
 
 try {
@@ -13,7 +13,26 @@ var options = {
   gateURL: config.gateURL,
   appId: config.appId,
   appKey: privateKey,
-  appType: 'extension', // or probe
+  appType: 'probe', // probe | extension
+  onGetResources: function() {
+    return [
+      {
+        rProperties: "1280x960,1280x720,640x480,480x360,192x144",
+        rType: "front-cam"
+      },
+      {
+        rProperties: "",
+        rType: "fp-scanner"
+      },
+/*      {
+        rProperties: "",
+        rType: "ldap"
+      }*/
+    ]
+  },
+  onTry: function(data) {
+    console.info('onTry ', data);
+  },
   /* optional parameters */
   osId: 'linux',
   headerOid: 'clientHeader',
@@ -24,17 +43,25 @@ console.log(options);
 
 var userToken = 'biomio.vk.test@gmail.com'; // for now we use email
 
-var conn = new Agent(userToken, options, function() {
+/** Test probe type */
+var conn = new BiomioNode(userToken, options, function() {});
 
-  conn.user_exists(function(exists) {
-    console.info('user exists ', exists);
 
-    /* callback will be called few times: in_progress, completed */
-    conn.run_auth(function (result) {
-      console.log('RUN AUTH STATUS: ' + JSON.stringify(result, null, 2));
 
-    });
 
-  });
 
-});
+/** Test extension type */
+//var conn = new BiomioNode(userToken, options, function() {
+//
+//  conn.user_exists(function(exists) {
+//    console.info('user exists ', exists);
+//
+//    /* callback will be called few times: in_progress, completed */
+//    conn.run_auth(function (result) {
+//      console.log('RUN AUTH STATUS: ' + JSON.stringify(result, null, 2));
+//
+//    });
+//
+//  });
+//
+//});
