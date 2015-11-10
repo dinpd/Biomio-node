@@ -1,11 +1,12 @@
 {
-  "name": "biomio-agent",
+  "name": "biomio-node",
   "version": "0.0.4",
   "private": true,
   "scripts": {
     "start": "node  ./example/app.js"
   },
   "dependencies": {
+    "bluebird": "^3.0.5",
     "fs": "0.0.2",
     "javascript-state-machine": "^2.3.5",
     "jsrsasign": "^5.0.0",

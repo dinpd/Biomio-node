@@ -1,4 +1,5 @@
 var fs = require('fs');
+var Promise = require("bluebird");
 var BiomioNode = require('../');
 var config = require('./config');
 
@@ -14,32 +15,24 @@ var options = {
   appId: config.appId,
   appKey: privateKey,
   appType: 'probe', // probe | extension
-  onGetResources: function() {
-    return [
-      {
-        rProperties: "1280x960,1280x720,640x480,480x360,192x144",
-        rType: "front-cam"
-      },
-      {
-        rProperties: "",
-        rType: "fp-scanner"
-      },
-/*      {
-        rProperties: "",
-        rType: "ldap"
-      }*/
-    ]
+  onGetResources: function(callback) {
+    callback( config.resources );
   },
   onTry: function(data) {
     console.info('onTry ', data);
+
+    //return new Promise(function (resolve, reject) {
+    //  resolve(["true"]);
+    //});
+
+    return ["true"];
   },
+
   /* optional parameters */
   osId: 'linux',
   headerOid: 'clientHeader',
   devId: 'node_js_lib'
 }
-
-console.log(options);
 
 var userToken = 'biomio.vk.test@gmail.com'; // for now we use email
 
