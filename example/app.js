@@ -36,25 +36,40 @@ var options = {
 
 var userToken = 'biomio.vk.test@gmail.com'; // for now we use email
 
-/** Test probe type */
-var conn = new BiomioNode(userToken, options, function() {});
+var conn = new BiomioNode(userToken, options);
 
 
+/* next interface */
 
-
-
-/** Test extension type */
-//var conn = new BiomioNode(userToken, options, function() {
-//
-//  conn.user_exists(function(exists) {
-//    console.info('user exists ', exists);
-//
-//    /* callback will be called few times: in_progress, completed */
-//    conn.run_auth(function (result) {
-//      console.log('RUN AUTH STATUS: ' + JSON.stringify(result, null, 2));
-//
-//    });
-//
-//  });
-//
+///** init connection to Gate */
+//var conn = new BiomioNode({
+//  url: config.url,
+//  appId: config.appId,
+//  appKey: privateKey
 //});
+//
+///** run auth if it's extension app */
+//conn.auth(userToken);
+//
+//conn.on('get-resource', function(req, callback) {
+//  callback({});
+//});
+//
+//conn.on('try', function(req, callback) {
+//  if(req.interactive) {
+//    /* display form */
+//
+//  } else {
+//    var credentials = req.resources;
+//    /* check credentials on LDAP server */
+//  }
+//});
+//
+//conn.on('auth.result', function(req) {
+//  return {};
+//});
+//
+//conn.on('auth.cancel', function(req) {
+//  return {};
+//});
+
