@@ -25,7 +25,7 @@ var options = {
     //  resolve(["true"]);
     //});
 
-    return ["true"];
+    return "true";
   },
 
   /* optional parameters */
