@@ -1,9 +1,9 @@
 {
   "name": "biomio-node",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "private": true,
   "scripts": {
-    "start": "node  ./example/app.js"
+    "start": ""
   },
   "dependencies": {
     "bluebird": "^3.0.5",

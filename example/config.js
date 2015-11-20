@@ -1,6 +1,7 @@
 module.exports = {
-  gateURL: "wss://gate.biom.io:8090/websocket",
-  appId: "32ec6214f5b17ecf769d9d2a6c179742",
+  gateURL: process.env.GATE_URL,
+  appId: process.env.APP_ID,
+  appSecretFile: process.env.APP_SECRET_FILE,
   resources: [
     {
       rProperties: "",

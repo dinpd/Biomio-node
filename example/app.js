@@ -1,10 +1,14 @@
 var fs = require('fs');
 var Promise = require("bluebird");
 var BiomioNode = require('../');
+
+var env = process.env.NODE_ENV || 'production';
+
 var config = require('./config');
+console.info(config);
 
 try {
-  var privateKey = fs.readFileSync(__dirname + "/private.key").toString();
+  var privateKey = fs.readFileSync(__dirname + '/' + config.appSecretFile).toString();
 } catch (e) {
   console.error('Can\'t find/read file "private.key"!');
   process.exit(1);
