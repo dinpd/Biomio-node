@@ -1,5 +1,5 @@
-# bioMio-node
-Library to communicate with Biomio Gate
+# biomio-node
+Library that establish connection to Biomio Gate, performs RPC calls, handling tries
 
 ## How to install
 
@@ -9,7 +9,6 @@ Library to communicate with Biomio Gate
 Look at example folder
 
 ## Example
-
 
 ```
 #!javascript
