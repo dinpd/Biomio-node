@@ -5,11 +5,7 @@ module.exports = {
   resources: [
     {
       rProperties: "",
-      rType: "fp-scanner"
-    },
-    /*      {
-     rProperties: "",
-     rType: "ldap"
-     }*/
+      rType: "user_input"
+    }
   ]
 }

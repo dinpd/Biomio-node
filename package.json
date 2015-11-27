@@ -1,19 +1,17 @@
 {
   "name": "biomio-node",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "start": ""
   },
   "dependencies": {
-    "bluebird": "^3.0.5",
-    "fs": "0.0.2",
     "javascript-state-machine": "^2.3.5",
     "jsrsasign": "^5.0.0",
-    "websocket": "^1.0.22",
-    "winston": "^1.0.2"
+    "websocket": "^1.0.22"
   },
   "devDependencies": {
-    "foreman": "^1.4.1"
+    "foreman": "^1.4.1",
+    "fs": "0.0.2"
   }
 }

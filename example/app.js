@@ -1,5 +1,4 @@
 var fs = require('fs');
-var Promise = require("bluebird");
 var BiomioNode = require('../');
 
 var env = process.env.NODE_ENV || 'production';
@@ -19,18 +18,6 @@ var options = {
   appId: config.appId,
   appKey: privateKey,
   appType: 'probe', // probe | extension
-  onGetResources: function(callback) {
-    callback( config.resources );
-  },
-  onTry: function(data) {
-    console.info('onTry ', data);
-
-    //return new Promise(function (resolve, reject) {
-    //  resolve(["true"]);
-    //});
-
-    return "true";
-  },
 
   /* optional parameters */
   osId: 'linux',
@@ -38,42 +25,29 @@ var options = {
   devId: 'node_js_lib'
 }
 
-var userToken = 'biomio.vk.test@gmail.com'; // for now we use email
+var clientId = 'test.open.id.provider@gmail.com';
 
-var conn = new BiomioNode(userToken, options);
+/** establish connection to Gate */
+var conn = new BiomioNode(clientId, options);
+
+conn.on('ready', function() {
+  console.info('Connection to Gate is ready!');
+});
+
+conn.on('getResources', function(done) {
+  done(config.resources);
+});
+
+conn.on('try:text_credentials', function(data, done) {
+  console.info("TRY: \n", data);
+
+  /** 1. get credentials from request */
+
+  /** 2. check credentials with LDAP server */
+
+  /** 3. return result */
+  done(null, {});
+});
 
 
-/* next interface */
-
-///** init connection to Gate */
-//var conn = new BiomioNode({
-//  url: config.url,
-//  appId: config.appId,
-//  appKey: privateKey
-//});
-//
-///** run auth if it's extension app */
-//conn.auth(userToken);
-//
-//conn.on('get-resource', function(req, callback) {
-//  callback({});
-//});
-//
-//conn.on('try', function(req, callback) {
-//  if(req.interactive) {
-//    /* display form */
-//
-//  } else {
-//    var credentials = req.resources;
-//    /* check credentials on LDAP server */
-//  }
-//});
-//
-//conn.on('auth.result', function(req) {
-//  return {};
-//});
-//
-//conn.on('auth.cancel', function(req) {
-//  return {};
-//});
 

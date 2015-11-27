@@ -1,1 +1,1 @@
-module.exports = require('./lib/client_interface');
+module.exports = require('./lib/index');
