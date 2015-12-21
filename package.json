@@ -6,6 +6,7 @@
     "start": ""
   },
   "dependencies": {
+    "debug": "^2.2.0",
     "javascript-state-machine": "^2.3.5",
     "jsrsasign": "^5.0.0",
     "websocket": "^1.0.22"

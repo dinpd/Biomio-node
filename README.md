@@ -6,7 +6,9 @@ Library that establish connection to Biomio Gate, performs RPC calls, handling t
 `npm install "git+ssh://git@bitbucket.org:biomio/biomio-node.git" --save`
 
 ## How to use
-Look at example folder
+Look at example folder.
+
+Create environment variable DEBUG=biomio:*, if you want to see logs
 
 ## Example
 
