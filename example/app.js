@@ -25,10 +25,9 @@ var options = {
   devId: 'node_js_lib'
 }
 
-var clientId = 'test.open.id.provider@gmail.com';
 
 /** establish connection to Gate */
-var conn = new BiomioNode(clientId, options);
+var conn = new BiomioNode(options);
 
 conn.on('ready', function() {
   console.info('Connection to Gate is ready!');

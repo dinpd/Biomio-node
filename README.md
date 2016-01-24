@@ -32,7 +32,7 @@ var options = {
 // unique client id, here we use email
 var clientId = 'test.open.id.provider@gmail.com';
 
-var conn = new BiomioNode(clientId, options);
+var conn = new BiomioNode(options);
 
 conn.on('ready', function() {
   console.info('Connection to Gate is ready!');
