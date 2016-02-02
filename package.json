@@ -1,9 +1,14 @@
 {
   "name": "biomio-node",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "private": true,
   "scripts": {
     "start": "node  ./example/app.js"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/biomio/biomio-node.git"
   },
   "dependencies": {
     "bluebird": "^3.0.5",
