@@ -76,7 +76,7 @@ conn.on('try:ldap_check', function (data, done) {
   var authenticated = true;
   done(authenticated);
 });
-
+```
 
 
 ### Use as a 'hybrid'
@@ -116,7 +116,7 @@ conn.on('ready', function() {
 
 function runAuth() {
   var rpcParams = {
-    userId: 'user@gmail.com',                   // currently we use enduser's email
+    userId: 'user@gmail.com',                     // currently we use enduser's email
     sessionId: "SOME_USER_SESSION_ID",
     clientId: 'test.open.id.provider@gmail.com',  // hardcoded for now, it should goes from url request
     resources: {"front-cam": "640x480"}           // here we send to Gate our available resources
