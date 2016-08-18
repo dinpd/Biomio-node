@@ -1,5 +1,4 @@
 var fs = require('fs');
-var Promise = require("bluebird");
 var BiomioNode = require('../');
 var config = require('./config');
 
@@ -36,7 +35,7 @@ var options = {
 
 var userToken = 'biomio.vk.test@gmail.com'; // for now we use email
 
-var conn = new BiomioNode(userToken, options);
+var conn = new BiomioNode(userToken, '01521572ec8d7a371f0b742fbb8205d1', options);
 
 
 /* next interface */
