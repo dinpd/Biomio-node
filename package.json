@@ -1,6 +1,6 @@
 {
   "name": "biomio-node",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "private": true,
   "scripts": {
     "start": "node  ./example/app.js"
